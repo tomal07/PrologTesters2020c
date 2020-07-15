@@ -13,61 +13,61 @@ test(fact8, [nondet]) :- in_queue(vered, 2, alon).
 test(fact9, [nondet]) :- in_queue(david, 2, vered).
 
 /*touch*/
-    % line 1(true)
-    test(touch1, [nondet]) :- touch(adi, rami).
-    test(touch2, [nondet]) :- touch(rami, adi).
+	% true
+		% line 1
+			test(touch1, [nondet]) :- touch(adi, rami).
+			test(touch2, [nondet]) :- touch(rami, adi).
 
-    test(touch3, [nondet]) :- touch(rami, yael).
-    test(touch4, [nondet]) :- touch(yael, rami).
+			test(touch3, [nondet]) :- touch(rami, yael).
+			test(touch4, [nondet]) :- touch(yael, rami).
 
-    test(touch5, [nondet]) :- touch(yael, yuval).
-    test(touch6, [nondet]) :- touch(yuval, yael).
+			test(touch5, [nondet]) :- touch(yael, yuval).
+			test(touch6, [nondet]) :- touch(yuval, yael).
 
-    % line 2(true)
-    test(touch7, [nondet]) :- touch(dana, tzvi).
-    test(touch8, [nondet]) :- touch(tzvi, dana).
+		% line 2
+			test(touch7, [nondet]) :- touch(dana, tzvi).
+			test(touch8, [nondet]) :- touch(tzvi, dana).
 
-    test(touch9, [nondet]) :- touch(tzvi, alon).
-    test(touch10, [nondet]) :- touch(alon, tzvi).
+			test(touch9, [nondet]) :- touch(tzvi, alon).
+			test(touch10, [nondet]) :- touch(alon, tzvi).
 
-    test(touch11, [nondet]) :- touch(alon, vered).
-    test(touch12, [nondet]) :- touch(vered, alon).
+			test(touch11, [nondet]) :- touch(alon, vered).
+			test(touch12, [nondet]) :- touch(vered, alon).
 
-    test(touch13, [nondet]) :- touch(vered, david).
-    test(touch14, [nondet]) :- touch(david, vered).
+			test(touch13, [nondet]) :- touch(vered, david).
+			test(touch14, [nondet]) :- touch(david, vered).
+    % false
+		test(touch_fail1, [fail]) :- touch(adi, null).
+		test(touch_fail2, [fail]) :- touch(null, adi).
 
-    %touch (false)
-    test(touch_fail1, [fail]) :- touch(adi, null).
-    test(touch_fail2, [fail]) :- touch(null, adi).
+		test(touch_fail3, [fail]) :- touch(adi, yuval).
+		test(touch_fail4, [fail]) :- touch(yuval, adi).
 
-    test(touch_fail3, [fail]) :- touch(adi, yuval).
-    test(touch_fail4, [fail]) :- touch(yuval, adi).
+		test(touch_fail5, [fail]) :- touch(null, null).
+		test(touch_fail6, [fail]) :- touch(adi, adi).
+		test(touch_fail7, [fail]) :- touch(david, david).
 
-    test(touch_fail5, [fail]) :- touch(null, null).
-    test(touch_fail6, [fail]) :- touch(adi, adi).
-    test(touch_fail7, [fail]) :- touch(david, david).
-
-    test(touch_fail8, [fail]) :- touch(david, adi).
-    test(touch_fail8, [fail]) :- touch(adi, david).
+		test(touch_fail8, [fail]) :- touch(david, adi).
+		test(touch_fail8, [fail]) :- touch(adi, david).
 
 /*interior*/
     % true
-    test(interior1, [nondet]) :- interior(rami).
-    test(interior2, [nondet]) :- interior(yael).
+		test(interior1, [nondet]) :- interior(rami).
+		test(interior2, [nondet]) :- interior(yael).
 
-    test(interior3, [nondet]) :- interior(tzvi).
-    test(interior4, [nondet]) :- interior(alon).
-    test(interior5, [nondet]) :- interior(vered).
+		test(interior3, [nondet]) :- interior(tzvi).
+		test(interior4, [nondet]) :- interior(alon).
+		test(interior5, [nondet]) :- interior(vered).
 
     % false
-    test(interior_fail1, [fail]) :- interior(adi).
-    test(interior_fail2, [fail]) :- interior(yuval).
+		test(interior_fail1, [fail]) :- interior(adi).
+		test(interior_fail2, [fail]) :- interior(yuval).
 
-    test(interior_fail3, [fail]) :- interior(dana).
-    test(interior_fail4, [fail]) :- interior(david).
+		test(interior_fail3, [fail]) :- interior(dana).
+		test(interior_fail4, [fail]) :- interior(david).
 
-    test(interior_fail5, [fail]) :- interior(unexisting_name).
-    test(interior_fail6, [fail]) :- interior(null).
+		test(interior_fail5, [fail]) :- interior(unexisting_name).
+		test(interior_fail6, [fail]) :- interior(null).
     
 /*before*/
     % true
@@ -122,3 +122,30 @@ test(fact9, [nondet]) :- in_queue(david, 2, vered).
 			test(before_fail9, [fail]) :- before(alon, alon).
 			test(before_fail9, [fail]) :- before(david, david).
 			test(before_fail9, [fail]) :- before(adi, adi).
+
+/*earlier*/
+	% true
+	    test(earlier1, [nondet]) :- earlier(yael, yuval).
+        test(earlier2, [nondet]) :- earlier(vered, david).
+
+	% false
+        test(earlier_fail1, [fail]) :- earlier(yuval, yael).
+        test(earlier_fail2, [fail]) :- earlier(david, vered).
+
+        test(earlier_fail3, [fail]) :- earlier(david, david).
+
+        %test(earlier_fail4, [fail]) :- earlier(null, vered). (I don't know if that realy should count as a fail, i'll ask roi rahmani)
+        test(earlier_fail5, [fail]) :- earlier(null, null).
+
+/*same_time_12*/
+    % true
+        test(same_time1, [nondet]) :- same_time_12(adi, dana).
+        test(same_time2, [nondet]) :- same_time_12(rami, alon).
+        test(same_time3, [nondet]) :- same_time_12(yael, david).
+
+	% false
+		test(same_time4, [fail]) :- same_time_12(dana, adi).
+		test(same_time5, [fail]) :- same_time_12(alon, rami).
+		test(same_time6, [fail]) :- same_time_12(david, yael).
+
+		test(same_time7, [fail]) :- same_time_12(david, david).

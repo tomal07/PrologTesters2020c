@@ -10,6 +10,7 @@ A repository that contains testers for the mamans in course 20596 in the OpenU
 ## Instructions
 To get an idea of how unit tests are done and ran in swi-prolog visit:http://www.paulbrownmagic.com/blog/swi_prolog_unit_testing_env (note that in this site it shows how to run the test using cmd(or terminal), while I show it using the swi-prolog GUI application).
 ### How to run the testers
+First of all, on the main directory of the repository on github, click on "Code" and then "Download as zip" to download the files, or clone it using git if you are familiar with git.
 For example, to run the tester for the first question of the first mmn you need to do the following:<br/>
 This is how my directory looks:
 ![Step 1](readme_images/1.png?raw=true "Title")<br/>

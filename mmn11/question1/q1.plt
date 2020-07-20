@@ -134,7 +134,7 @@ test(fact9, [nondet]) :- in_queue(david, 2, vered).
 
         test(earlier_fail3, [fail]) :- earlier(david, david).
 
-        %test(earlier_fail4, [fail]) :- earlier(null, vered). (I don't know if that realy should count as a fail, i'll ask roi rahmani)
+        test(earlier_fail4, [fail]) :- earlier(null, vered).
         test(earlier_fail5, [fail]) :- earlier(null, null).
 
 /*same_time_12*/
@@ -149,3 +149,6 @@ test(fact9, [nondet]) :- in_queue(david, 2, vered).
 		test(same_time6, [fail]) :- same_time_12(david, yael).
 
 		test(same_time7, [fail]) :- same_time_12(david, david).
+
+        test(same_time7, [fail]) :- same_time_12(null, null).
+        test(same_time7, [fail]) :- same_time_12(adi, null).

@@ -142,9 +142,8 @@ test(fact9, [nondet]) :- in_queue(david, 2, vered).
         test(same_time1, [nondet]) :- same_time_12(adi, dana).
         test(same_time2, [nondet]) :- same_time_12(rami, alon).
         test(same_time3, [nondet]) :- same_time_12(yael, david).
-
+	test(same_time4, [nondet]) :- same_time_12(dana, adi).
 	% false
-		test(same_time4, [fail]) :- same_time_12(dana, adi).
 		test(same_time5, [fail]) :- same_time_12(alon, rami).
 		test(same_time6, [fail]) :- same_time_12(david, yael).
 

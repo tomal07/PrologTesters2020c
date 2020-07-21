@@ -22,7 +22,7 @@ Now we want to open the tester, go to file and then consult:<br/>
 Select the tester and make sure that you specify "all files"(on the right down corner of the screen in windows), otherwise, you won't be able to see the tester:<br/>
 ![Step 4](readme_images/4.png?raw=true "Title")<br/>
 Now write the following commands, and you will see the tester's results:<br/>
-![Step 5](readme_images/5.png?raw=true "Title")<br/>
+![Step 5](readme_images/5-1.png?raw=true "Title")<br/>
 ### The tester says I have a problem, how can I know what it is?
 If you get an error from the tester that says a test failed and was meant to succeed(or in reverse), you should see the name of the test, for example in this image:<br/>
 ![Error 1](readme_images/6.png?raw=true "Title")<br/>

@@ -114,14 +114,14 @@ test(fact9, [nondet]) :- in_queue(david, 2, vered).
 
         % other
             test(before_fail9, [fail]) :- before(null, dana).
-            test(before_fail9, [fail]) :- before(dana, null).
+            test(before_fail10, [fail]) :- before(dana, null).
 
-            test(before_fail9, [fail]) :- before(alon, null).
-            test(before_fail9, [fail]) :- before(null, alon).
+            test(before_fail11, [fail]) :- before(alon, null).
+            test(before_fail12, [fail]) :- before(null, alon).
 
-			test(before_fail9, [fail]) :- before(alon, alon).
-			test(before_fail9, [fail]) :- before(david, david).
-			test(before_fail9, [fail]) :- before(adi, adi).
+			test(before_fail13, [fail]) :- before(alon, alon).
+			test(before_fail14, [fail]) :- before(david, david).
+			test(before_fail15, [fail]) :- before(adi, adi).
 
 /*earlier*/
 	% true
